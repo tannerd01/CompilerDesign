@@ -48,7 +48,7 @@ diction_win=( "${diction_nfo[@]}" "http://gnuwin32.sourceforge.net/downlinks/dic
 diction_mac=( "${diction_nfo[@]}" "" "" "brew install diction" )
 
 diction_dep_nfo=( "Diction" "$(echo $(which diction)$(ls dependencies/diction/bin/libintl3.dll))" "http://www.gnu.org/software/diction/" )
-diction_dep_win=( "${diction_nfo[@]}" "http://gnuwin32.sourceforge.net/downlinks/diction-dep-zip.php" "unzip dependencies/diction.zip -d dependencies/diction" )
+diction_dep_win=( "${diction_nfo[@]}" "http://gnuwin32.sourceforge.net/downlinks/diction-dep-zip.php" "dependencies/diction.zip" "unzip dependencies/diction.zip -d dependencies/diction" )
 
 libreoffice_nfo=( "LibreOffice" "$(ls C:\\Program\ Files\\LibreOffice\ 3.5)$(ls /Applications/LibreOffice)" "http://www.libreoffice.org/download/" )
 libreoffice_win=( "${libreoffice_nfo[@]}" "http://download.documentfoundation.org/libreoffice/stable/3.5.5/win/x86/LibO_3.5.5_Win_x86_install_multi.msi" "dependencies/libreoffice.msi" )
@@ -81,7 +81,7 @@ install_package() {
             curl -L "${package[$DOWNLOAD]}" > "${package[$DEST]}"
         fi
         if [ ${#package[*]} > $COMMAND ]; then
-            "${package[$COMMAND]}"
+            ${package[$COMMAND]}
         else
             file_open "${package[$DEST]}"
         fi
