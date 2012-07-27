@@ -75,7 +75,7 @@ Follow-up:
 - [Who developed the first compiler](#who-was-grace-hopper)?
 
 ### What are the phases of a compiler?
-Compilers consist of several distinct phases split among the front and back end.
+Compilers consist of distinct phases split among the front and back end.
 
 ![Phases of a compiler](images/compiler-phases.svg)
 
@@ -114,7 +114,7 @@ An interpreter reads in souce code and executes immediately without producing an
 - [Which is better, compilers or interpreters](#which-is-better-compilers-or-interpreters)?
 
 ### How do interpreters work?
-Interpreters share many [phases of a compiler](#what-are-the-phases-of-a-compiler), but execute instead of [generating machine code](#what-is-code-generation).
+Interpreters share [phases of a compiler](#what-are-the-phases-of-a-compiler), but execute instead of [generating machine code](#what-is-code-generation).
 Interpreter implementations vary:
 
 - Trivial interpreters execute code while parsing (e.g., early versions of Lisp, Python, Perl, Basic)
@@ -136,7 +136,7 @@ The term "bootstrapping" comes from the saying "to pull yourself up by your boot
 In computing the term is often used to describe the act of building a system using itself, or a previous version of the system.
 More specifically, when referring to compilers, bootstrapping means writing a compiler in its own target language, creating a self-hosting compiler that can compile its own source code.
 
-The first few versions of a compiler for a new language are written on an existing reliable language until the new compiler become reliable enough to be self-hosting.
+The first versions of a compiler for a new language are written on an existing reliable language until the new compiler become reliable enough to be self-hosting.
 The first couple of C compilers were written in assembly, but now they are written in C.
 
 Examples of self-hosting compilers:
@@ -364,6 +364,7 @@ Loops, subroutines, and modules can need more than one pass to more effectly opt
 > TODO: add Easier to Prove Correctability
 > TODO: add Source-to-Source Compilation Possible (Translators)
 > TODO: add Source-Bytecode-Native Code
+
 A multi-pass compiler traverses the program multiple times.
 Each pass takes the result of the previous pass as input and creates an intermediate output.
 This retraversal gives the multi-pass compiler a much bigger scope as it allows it to see the entire program being compiled as opposed to a one pass compiler that can only see a small portion of the program being compiled.

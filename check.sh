@@ -118,7 +118,7 @@ elif [ $1 = "passive" ]; then
 # Weasel word check, adapted from the same source.
 # These words make prose worse.
 elif [ $1 = "weasel" ]; then
-    egrep -E -r -n -i "\\b($weasels)\\b" textbook/$section* | while read line; do
+    egrep -E -r -n -i "\\b($weasels)\\b" textbook/$section* | egrep -v '>TODO' | while read line; do
         echo "Weasel word: $line"
     done
 # Count sentence length. Sentences longer than 20 words are too long.
